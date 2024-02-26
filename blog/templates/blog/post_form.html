@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>{% if object %}Редагувати пост{% else %}Створити новий пост{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Зберегти пост</button>
+    </form>
+{% endblock content %}
